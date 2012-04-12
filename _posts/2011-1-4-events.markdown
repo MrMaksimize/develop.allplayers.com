@@ -99,7 +99,7 @@ Let's take a look at how to create an event
     /events [POST]
 
 <pre class="terminal">
-curl -b cjar http://www.allplayers.local:8080/api/v1/rest/events.json -d"curl -b cjar http://www.allplayers.local:8080/api/v1/rest/events.json -d"groups[0]=aea342ac-69ef-11e1-b865-300db1507b7a&title=TestEvent&description=test1&category=game&competitors[c9690224-eead-11e0-abff-080027706aa2]label]=BlueJays&competitors[b0f67f02-6179-11e1-9932-b37b4e17875f][label]=RedJays&resources[0]=b19g47se-b0f67f02-6179-11e1-9932-b37b4e17875f&date_time[start]=2012-09-15T11%3A00%3A00&date_time[end]=2012-09-15T12%3A00%3A00&date_time[repeat][interval]=1&date_time[repeat][freq]=daily&date_time[repeat][until]=2012-10-15&date_time[repeat][exdate][]=2012-09-17&date_time[repeat][rdate][]=2012-10-17&date_time[repeat][bymonth][9]=9&date_time[repeat][bymonth][10]=10&date_time[repeat][bymonthday][12]=12&date_time[repeat][bymonthday][15]=15&date_time[repeat][bymonthday][17]=17&date_time[repeat][byday][SU]=SU&date_time[repeat][byday][MO]=MO"
+curl -b cjar http://www.allplayers.local:8080/api/v1/rest/events.json -d"curl -b cjar http://www.allplayers.local:8080/api/v1/rest/events.json -d"groups[0]=aea342ac-69ef-11e1-b865-300db1507b7a&title=TestEvent&description=test1&category=game&competitors[0][uuid]=c9690224-eead-11e0-abff-080027706aa2&competitors[0][label]=BlueJays&competitors[1][uuid]=b0f67f02-6179-11e1-9932-b37b4e17875f&competitors[0][label]=RedJays&resources[0]=b19g47se-b0f67f02-6179-11e1-9932-b37b4e17875f&date_time[start]=2012-09-15T11%3A00%3A00&date_time[end]=2012-09-15T12%3A00%3A00&date_time[repeat][interval]=1&date_time[repeat][freq]=daily&date_time[repeat][until]=2012-10-15&date_time[repeat][exdate][]=2012-09-17&date_time[repeat][rdate][]=2012-10-17&date_time[repeat][bymonth][9]=9&date_time[repeat][bymonth][10]=10&date_time[repeat][bymonthday][12]=12&date_time[repeat][bymonthday][15]=15&date_time[repeat][bymonthday][17]=17&date_time[repeat][byday][SU]=SU&date_time[repeat][byday][MO]=MO"
 {
   "uuid":"15852492-84c4-11e1-a209-da9f8ce3ca4d",
   "description":"test1",
@@ -239,10 +239,12 @@ A numerically keyed array of competitor arrays containing the following:
 *\* Fields with an asterisk are required.*  
 Example:  
 
-`competitors[c9690224-eead-11e0-abff-080027706aa2][label] = 'Red';`  
-`competitors[c9690224-eead-11e0-abff-080027706aa2][score] = 32;`
-`competitors[b0f67f02-6179-11e1-9932-b37b4e17875f][label] = 'White';`  
-`competitors[b0f67f02-6179-11e1-9932-b37b4e17875f][score] = 10;`  
+`competitors[0][uuid] = 'c9690224-eead-11e0-abff-080027706aa2';`  
+`competitors[0][label] = 'Red';`   
+`competitors[0][score] = 32;`
+`competitors[1][uuid] = 'b0f67f02-6179-11e1-9932-b37b4e17875f';`  
+`competitors[1][label] = 'White';`  
+`competitors[1][score] = 10;`  
 
 
 <a id="field-info-published"></a>
